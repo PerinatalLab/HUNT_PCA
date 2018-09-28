@@ -36,7 +36,7 @@ echo 'Step 3. Obtain list of independent variants in HapMap III overlapping with
 
 echo 'Step 4. Calculate PC in HapMap III, removing related samples and only using genotyped genetic variants from HUNT.'
 
-~/software/plink2 --bfile /mnt/hdd/common/HUNT_PCA/hapmap_mod/hapmap3_full_r1_b37_fwd_mod --extract raw_data/tmp_hapmap_filtered_variants.prune.in --remove raw_data/hapmap_related.txt --pca var-wts --out raw_data/pca_hapmap
+~/software/plink2 --bfile /mnt/hdd/common/HUNT_PCA/hapmap_mod/hapmap3_full_r1_b37_fwd_mod --extract raw_data/tmp_hapmap_filtered_variants.prune.in --remove raw_data/hapmap_related.txt --freq --pca var-wts --out raw_data/pca_hapmap
 
 
 rm raw_data/tmp*
