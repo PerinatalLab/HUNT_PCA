@@ -18,7 +18,7 @@ echo 'Obtaining list of related samples...'
 
 for sample in /mnt/work/hunt/relatedness/*.kin0
 do
-Rscript --vanilla scripts/sub_unrelated.R "$sample" /mnt/work/hunt/relatedness/$(basename "$sample" .kin0)_list
+Rscript --vanilla scripts/sub_unrelated.R "$sample" $(basename "$sample" .kin0)_list
 done
 
 echo 'Step 2. Obtain PC weights in HUNT, removing related samples, and only using MAF >0.01'
