@@ -26,4 +26,13 @@ d= d %>% mutate(ID= paste(chr, pos, A1, A2, sep=':')) %>% select(V1, ID, V3, V4,
 
 write.table(d, bim_outfile, row.names=F, col.names=F, sep= '\t', quote=F)
 
+system('../soft/plink2 --bed /mnt/archive/hunt/genotypes/plink/genotyped_PID106764.bed --fam /mnt/archive/hunt/genotypes/plink/genotyped_PID106764.fam --bim /mnt/work/pol/HUNT_PCA/modif_genotyped_PID106764.bim --freq --out /mnt/work/pol/HUNT_PCA/hunt_maf')
+
+maf= read.table('/mnt/work/pol/HUNT_PCA/hunt_maf.afreq', h=F, sep= '\t')
+
+maf= filter(maf, V5 >= 0.01)
+x= d %>% filter(d$ID %in% maf$V2) %>% select(V1, V4)
+x$V5= x$V4
+
+write.table(x, outfile_range, row.names=F, col.names=F, sep= '\t', quote= F)
 
