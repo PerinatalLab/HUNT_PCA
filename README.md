@@ -11,14 +11,18 @@ The aims of the scripts in this repository are:
 
 
 ## Scripts
-1. `extract_mom_samples.R` to extract samples list for mothers, father and child into different files
-2. `hunt_geno_range.R` to extract typed genetic variants from HUNT
+1. `extract_mom_samples.R` to extract samples list for mothers, fathers and children into different files
+2. `hunt_geno_range.R` to extract of typed genetic variants from HUNT
 3. `hapmap.sh` to perform PCA in HapMap samples. Depends on:
-	- `sub_unrelated.R` to obtain a list of unrelated HapMap participants
+	- `sub_unrelated.R` to obtain a list of unrelated samples
 	- `sub_hapmap_bim.R` to modify HapMap bim variants ID
+4. `hapmap_pca_projection.sh` to project HUNT samples onto HapMap III PCs
+5. `pca_hunt.sh` to calculate PC in unrelated HUNT samples (mothers, fathers and children independenlty), and project all samples into the PC weights. Depends on:
+	- 'sub_unrelated.R' to obtain a list of unrelated samples
 
 
-## Steps for HapMap PC projection
+
+## Steps for HapMap PCA
 
 1. Extract list of HUNT genotyped variants (chr and pos)
 2. Select unrelated samples from HapMap III and run PCA in genetic variants overlapping with HUNT (MAF >0.01)
