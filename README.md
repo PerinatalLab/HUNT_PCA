@@ -18,7 +18,7 @@ The aims of the scripts in this repository are:
 	- `sub_hapmap_bim.R` to modify HapMap bim variants ID
 4. `hapmap_pca_projection.sh` to project HUNT samples onto HapMap III PCs
 5. `pca_hunt.sh` to calculate PC in unrelated HUNT samples (mothers, fathers and children independenlty), and project all samples into the PC weights. Depends on:
-	- 'sub_unrelated.R' to obtain a list of unrelated samples
+	- `sub_unrelated.R` to obtain a list of unrelated samples
 
 
 
