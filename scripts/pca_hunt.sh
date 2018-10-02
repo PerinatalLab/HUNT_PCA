@@ -11,7 +11,7 @@ mkdir /mnt/work/hunt/relatedness
 
 for sample in /mnt/work/pol/HUNT_PCA/*samples
 do
-~/soft/plink2 --bfile /mnt/archive/hunt/genotypes/plink/genotyped_PID106764 --keep "$sample" --make-king-table --king-table-filter 0.03125 --out /mnt/work/hunt/relatedness/$(basename "$sample" _sample)_related
+~/soft/plink2 --bfile /mnt/archive/hunt/genotypes/plink/genotyped_PID106764 --keep "$sample" --make-king-table --king-table-filter 0.03125 --out /mnt/work/hunt/relatedness/$(basename "$sample" _samples)_related
 done
 
 echo 'Obtaining list of related samples...'
@@ -25,8 +25,13 @@ echo 'Step 2. Obtain PC weights in HUNT, removing related samples, and only usin
 
 for sample in /mnt/work/hunt/relatedness/*_list
 do
-~/soft/plink2 --bfile /mnt/archive/hunt/genotypes/plink/genotyped_PID106764 --maf 0.01 --remove "$sample" --pca var-wts --out /mnt/work/hunt/pca/$(basename "$sample" _samples_related_list)
+~/soft/plink2 --bfile /mnt/archive/hunt/genotypes/plink/genotyped_PID106764 --maf 0.01 --keep "$sample" --pca var-wts --out /mnt/work/hunt/pca/$(basename "$sample" _samples_related_list)
 done
+
+rm /mnt/work/hunt/pca/fetal.eigenval /mnt/work/hunt/pca/fetal.eigenvec
+rm /mnt/work/hunt/pca/father.eigenval /mnt/work/hunt/pca/father.eigenvec
+rm /mnt/work/hunt/pca/mother.eigenval /mnt/work/hunt/pca/mother.eigenvec
+rm /mnt/work/hunt/pca/*.log
 
 echo 'Step 3. Project all subjects into these PCs'
 
