@@ -1,0 +1,37 @@
+PLINK v2.00a1LM 64-bit Intel (11 Feb 2018)
+Options in effect:
+  --bfile /mnt/hdd/common/HUNT_PCA/hapmap_mod/hapmap3_full_r1_b37_fwd_mod
+  --extract raw_data/tmp_hapmap_filtered_variants.prune.in
+  --freq
+  --out raw_data/pca_hapmap
+  --pca var-wts
+  --remove raw_data/hapmap_related.txt
+
+Hostname: gu-plab
+Working directory: /home/pol/HUNT_PCA
+Start time: Tue Oct  9 16:21:06 2018
+
+Random number seed: 1539094866
+64146 MB RAM detected; reserving 32073 MB for main workspace.
+Using up to 16 threads (change this with --threads).
+1115 samples (556 females, 559 males; 924 founders) loaded from
+/mnt/hdd/common/HUNT_PCA/hapmap_mod/hapmap3_full_r1_b37_fwd_mod.fam.
+1556470 variants loaded from
+/mnt/hdd/common/HUNT_PCA/hapmap_mod/hapmap3_full_r1_b37_fwd_mod.bim.
+Note: No phenotype data present.
+--extract: 81343 variants remaining.
+--remove: 850 samples remaining.
+850 samples (436 females, 414 males; 819 founders) remaining after main
+filters.
+Calculating allele frequencies... done.
+--freq: Allele frequencies (founders only) written to raw_data/pca_hapmap.afreq
+.
+81343 variants remaining after main filters.
+Constructing GRM: done.
+Correcting for missingness... done.
+Extracting eigenvalues and eigenvectors... done.
+--pca: Variant weights written to raw_data/pca_hapmap.eigenvec.var .
+--pca: Eigenvectors written to raw_data/pca_hapmap.eigenvec , and eigenvalues
+written to raw_data/pca_hapmap.eigenval .
+
+End time: Tue Oct  9 16:21:07 2018
