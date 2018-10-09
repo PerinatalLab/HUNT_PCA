@@ -40,4 +40,3 @@ echo 'Step 4. Calculate PC in HapMap III, removing related samples and only usin
 
 
 rm raw_data/tmp*
-rm raw_data/pca_hapmap.eigenvec raw_data/pca_hapmap.eigenval
