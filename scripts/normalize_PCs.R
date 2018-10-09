@@ -20,10 +20,10 @@ library(dplyr)
 
 eigenvalues= read.table(eigen_file, h=F, sep= '\t')
 pcs= read.table(pcs_file, h=F, sep= '\t')
-names(pcs)= c('FID','IID','PC1','PC2','PC3','PC4','PC5','PC6','PC7','PC8','PC9','PC10')
+names(pcs)= c('FID','IID','x1','x2','PC1','PC2','PC3','PC4','PC5','PC6','PC7','PC8','PC9','PC10')
 
-for (i in length(eigenvalues$V1)){
-pcs[,i]= pcs[,i] * sqrt(eigenvalues$V1[i]) 
+for (i in 1:length(eigenvalues$V1)){
+pcs[,i+4]= pcs[,i+4] * sqrt(eigenvalues$V1[i]) 
 }
 
 write.table(pcs_file)
